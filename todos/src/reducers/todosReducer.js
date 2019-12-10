@@ -31,7 +31,7 @@ export function reducer(state, action) {
 					{
 						item: action.payload.formState.todo,
 						completed: false,
-						id: Date.now()
+						id: Date.now(-30000)
 					}
 				]
 			};
