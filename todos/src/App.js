@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import Button from "@material-ui/core/Button";
+import "./App.scss";
 
 import { reducer, initialState } from "./reducers/todosReducer";
 
@@ -19,11 +20,15 @@ function App() {
 			<ListTodos state={state} dispatch={dispatch}></ListTodos>
 			<AddTodo dispatch={dispatch}></AddTodo>
 			<br />
-			<input
+			<Button
 				type="button"
-				value="Clear Completed"
+				value=""
 				onClick={clearCompleted}
-			/>
+				variant="contained"
+				color="primary"
+			>
+				Clear Completed
+			</Button>
 		</div>
 	);
 }

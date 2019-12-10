@@ -1,6 +1,9 @@
 import React, { useReducer } from "react";
 import { reducer, initialState } from "../reducers/todosReducer";
 
+import Button from "@material-ui/core/Button";
+import Input from "@material-ui/core/Input";
+
 const initialFormState = {
 	todo: ""
 };
@@ -37,14 +40,16 @@ export default function AddTodo(props) {
 		<>
 			<form onSubmit={onSubmit}>
 				<br />
-				<input
+				<Input
 					type="text"
 					placeholder="Todo?"
 					value={formState.todo}
 					onChange={onValueChange}
 					name="todo"
 				/>
-				<input type="submit" value="add" />
+				<Button type="submit" variant="contained" color="primary">
+					Add
+				</Button>
 			</form>
 		</>
 	);
