@@ -8,7 +8,7 @@ export const initialState = {
 			id: Date.now()
 		},
 		{
-			item: "Learn",
+			item: "Learn things",
 			completed: false,
 			id: Date.now() + 3
 		}
@@ -23,7 +23,17 @@ const COMPLETE_TODO = "COMPLETE_TODO";
 export function reducer(state, action) {
 	switch (action.type) {
 		case ADD_TODO:
-			return { ...state };
+			return {
+				...state,
+				todos: [
+					...state.todos,
+					{
+						item: action.payload.formState.todo,
+						completed: false,
+						id: Date.now()
+					}
+				]
+			};
 		case COMPLETE_TODO:
 			return { ...state };
 		default:

@@ -4,14 +4,15 @@ import "./App.css";
 
 import { reducer, initialState } from "./reducers/todosReducer";
 
+import ListTodos from "./components/ListTodos";
+import AddTodo from "./components/AddTodo";
+
 function App() {
 	const [state, dispatch] = useReducer(reducer, initialState);
-
 	return (
 		<div className="App">
-			{state.todos.map(todo => (
-				<li>{todo.item}</li>
-			))}
+			<ListTodos state={state}></ListTodos>
+			<AddTodo dispatch={dispatch}></AddTodo>
 		</div>
 	);
 }
