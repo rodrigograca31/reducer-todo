@@ -11,7 +11,7 @@ function App() {
 	const [state, dispatch] = useReducer(reducer, initialState);
 	return (
 		<div className="App">
-			<ListTodos state={state}></ListTodos>
+			<ListTodos state={state} dispatch={dispatch}></ListTodos>
 			<AddTodo dispatch={dispatch}></AddTodo>
 		</div>
 	);

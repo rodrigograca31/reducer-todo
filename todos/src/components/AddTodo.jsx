@@ -30,6 +30,7 @@ export default function AddTodo(props) {
 	const onSubmit = event => {
 		event.preventDefault();
 		props.dispatch({ type: "ADD_TODO", payload: { formState } });
+		dispatchForm({ type: "SUBMIT" });
 	};
 
 	return (
@@ -39,6 +40,7 @@ export default function AddTodo(props) {
 				<input
 					type="text"
 					placeholder="Todo?"
+					value={formState.todo}
 					onChange={onValueChange}
 					name="todo"
 				/>

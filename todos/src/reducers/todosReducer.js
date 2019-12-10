@@ -35,7 +35,19 @@ export function reducer(state, action) {
 				]
 			};
 		case COMPLETE_TODO:
-			return { ...state };
+			console.log("complete", action.payload);
+
+			return {
+				...state,
+				todos: [
+					...state.todos.map(todo => {
+						if (todo.id === action.payload.id) {
+							return { ...todo, completed: !todo.completed };
+						}
+						return todo;
+					})
+				]
+			};
 		default:
 			return state;
 	}
