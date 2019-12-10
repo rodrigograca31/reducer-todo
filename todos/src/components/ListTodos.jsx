@@ -12,6 +12,7 @@ export default function ListTodos(props) {
 				<li
 					className={todo.completed === true ? "completed" : ""}
 					onClick={e => completeTodo(todo)}
+					key={todo.id}
 				>
 					{todo.item}
 				</li>

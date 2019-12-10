@@ -18,6 +18,7 @@ export const initialState = {
 // STEP 2 - DECIDE WHAT TYPES OF ACTIONS MIGHT HAPPEN
 const ADD_TODO = "ADD_TODO";
 const COMPLETE_TODO = "COMPLETE_TODO";
+const CLEAR_COMPLETED = "CLEAR_COMPLETED";
 
 // STEP 3 - BUILD A REDUCER FUNCTION
 export function reducer(state, action) {
@@ -47,6 +48,11 @@ export function reducer(state, action) {
 						return todo;
 					})
 				]
+			};
+		case CLEAR_COMPLETED:
+			return {
+				...state,
+				todos: [...state.todos.filter(todo => todo.completed === false)]
 			};
 		default:
 			return state;
