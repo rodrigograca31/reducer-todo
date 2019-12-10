@@ -1,11 +1,16 @@
 // STEP 1 - Initial State
-const initialState = {
+export const initialState = {
 	todos: [
 		// Todo structure
 		{
 			item: "Learn about reducers",
 			completed: false,
 			id: Date.now()
+		},
+		{
+			item: "Learn",
+			completed: false,
+			id: Date.now() + 3
 		}
 	]
 };
@@ -15,7 +20,7 @@ const ADD_TODO = "ADD_TODO";
 const COMPLETE_TODO = "COMPLETE_TODO";
 
 // STEP 3 - BUILD A REDUCER FUNCTION
-function reducer(state, action) {
+export function reducer(state, action) {
 	switch (action.type) {
 		case ADD_TODO:
 			return { ...state };
@@ -25,5 +30,3 @@ function reducer(state, action) {
 			return state;
 	}
 }
-
-export default { reducer, initialState };
